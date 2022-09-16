@@ -80,3 +80,38 @@ class PersegiPanjang extends Shape {
     rectangle.style.background = this.warna;
   }
 }
+
+class SegitigaSamaSisi extends Shape {
+  constructor(alas, tinggi, samping, nama, warna) {
+    super();
+    this.alas = alas;
+    this.tinggi = tinggi;
+    this.samping = samping;
+    this.nama = nama;
+    this.warna = warna;
+  }
+
+  luas() {
+    return (this.alas * this.tinggi) / 2;
+  }
+
+  keliling() {
+    return this.alas * 3;
+  }
+  
+  draw() {
+    const bangun = document.getElementById("shape");
+    const newSegitigaSisi = document.createElement('div');
+    newSegitigaSisi.id = 'segitigaSisi';
+    bangun.appendChild(newSegitigaSisi);
+    const text = document.createElement('h1');
+    text.innerHTML = this.nama;
+    bangun.append(text);
+    const segitigaSisi = document.getElementById('segitigaSisi');
+    segitigaSisi.style.width = '0';
+    segitigaSisi.style.height = '0';
+    segitigaSisi.style.borderBottom = `${this.alas}px solid ${this.warna}`;
+    segitigaSisi.style.borderRight = `${this.tinggi}px solid transparent`;
+    segitigaSisi.style.borderLeft = `${this.samping}px solid transparent`;
+  }
+}
