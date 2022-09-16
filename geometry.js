@@ -115,3 +115,38 @@ class SegitigaSamaSisi extends Shape {
     segitigaSisi.style.borderLeft = `${this.samping}px solid transparent`;
   }
 }
+
+class SegitigaSamaKaki extends Shape {
+  constructor(alas, tinggi, samping, nama, warna) {
+    super();
+    this.alas = alas;
+    this.tinggi = tinggi;
+    this.samping = samping;
+    this.nama = nama;
+    this.warna = warna;
+  }
+
+  luas() {
+    return (this.alas * this.tinggi) / 2;
+  }
+
+  keliling() {
+    return this.alas + (this.samping * 2);
+  }
+
+  draw() {
+    const bangun = document.getElementById("shape");
+    const newSegitigaKaki = document.createElement('div');
+    newSegitigaKaki.id = 'segitigaKaki';
+    bangun.appendChild(newSegitigaKaki);
+    const text = document.createElement('h1');
+    text.innerHTML = this.nama;
+    bangun.append(text);
+    const segitigaKaki = document.getElementById('segitigaKaki');
+    segitigaKaki.style.width = '0';
+    segitigaKaki.style.height = '0';
+    segitigaKaki.style.borderBottom = `${this.alas}px solid ${this.warna}`;
+    segitigaKaki.style.borderRight = `${this.tinggi}px solid transparent`;
+    segitigaKaki.style.borderLeft = `${this.samping}px solid transparent`;
+  }
+}
