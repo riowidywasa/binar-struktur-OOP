@@ -217,3 +217,23 @@ class Lingkaran extends Shape {
     return newElement;
   }
 }
+
+const p = new Persegi(110, 'persegi', 'black');
+console.log(p.luas());
+console.log(p.draw());
+
+const pp = new PersegiPanjang(100, 50, 'persegi panjang', 'orange')
+pp.draw();
+
+const samaSisi = new SegitigaSamaSisi(100, 100, 100, 'segitiga sama sisi', 'brown')
+samaSisi.draw();
+
+const samaKaki = new SegitigaSamaKaki(120, 50, 50, 'segitiga sama kaki', 'green')
+samaKaki.draw();
+
+const ss = new SegitigaSiku2(100, 150, 'segitiga siku2', 'blue');
+ss.draw();
+
+const l = new Lingkaran(100, 'lingkaran', 'red');
+console.log(l.keliling());
+console.log(l.draw());
