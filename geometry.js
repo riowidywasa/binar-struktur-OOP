@@ -48,3 +48,35 @@ class Persegi extends Shape {
     square.style.background = this.warna;
   }
 }
+
+class PersegiPanjang extends Shape {
+  constructor(panjang, lebar, nama, warna) {
+    super();
+    this.panjang = panjang;
+    this.lebar = lebar;
+    this.nama = nama;
+    this.warna = warna;
+  }
+
+  luas() {
+    return this.panjang * this.lebar;
+  }
+
+  keliling() {
+    return (this.panjang * 2) + (this.lebar * 2);
+  }
+
+  draw() {
+    const bangun = document.getElementById("shape");
+    const newRectangle = document.createElement('div');
+    newRectangle.id = 'rectangle';
+    bangun.appendChild(newRectangle);
+    const text = document.createElement('h1');
+    text.innerHTML = this.nama;
+    bangun.append(text);
+    const square = document.getElementById('rectangle');
+    rectangle.style.width = this.panjang + 'px';
+    rectangle.style.height = this.lebar + 'px';
+    rectangle.style.background = this.warna;
+  }
+}
