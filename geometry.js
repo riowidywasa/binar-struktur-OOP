@@ -150,3 +150,36 @@ class SegitigaSamaKaki extends Shape {
     segitigaKaki.style.borderLeft = `${this.samping}px solid transparent`;
   }
 }
+
+class SegitigaSiku2 extends Shape {
+  constructor(alas, tinggi, nama, warna) {
+    super();
+    this.alas = alas;
+    this.tinggi = tinggi;
+    this.nama = nama;
+    this.warna = warna;
+  }
+
+  luas() {
+    return this.tinggi * this.alas;
+  }
+
+  keliling() {
+    return this.alas + this.tinggi + this.samping;
+  }
+
+  draw() {
+    const bangun = document.getElementById("shape");
+    const newElement = document.createElement('div');
+    newElement.id = 'siku2';
+    bangun.appendChild(newElement);
+    const text = document.createElement('h1');
+    text.innerHTML = this.nama;
+    bangun.append(text);
+    const siku2 = document.getElementById('siku2');
+    siku2.style.width = '0';
+    siku2.style.height = '0';
+    siku2.style.borderBottom = `${this.alas}px solid ${this.warna}`
+    siku2.style.borderRight = `${this.tinggi}px solid transparent`;
+  }
+}
