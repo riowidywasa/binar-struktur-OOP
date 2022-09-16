@@ -183,3 +183,37 @@ class SegitigaSiku2 extends Shape {
     siku2.style.borderRight = `${this.tinggi}px solid transparent`;
   }
 }
+
+class Lingkaran extends Shape {
+  constructor(ruas, nama, warna) {
+    super();
+    this.ruas = ruas;
+    this.nama = nama;
+    this.warna = warna;
+  }
+
+  luas() {
+    return Math.PI * (this.ruas ** 2);
+  }
+
+  keliling() {
+    return Math.PI * 2 * this.ruas;
+  }
+  
+  draw() {
+    const bangun = document.getElementById("shape");
+    const newElement = document.createElement('div');
+    newElement.id = 'lingkaran';
+    bangun.appendChild(newElement);
+    const text = document.createElement('h1');
+    text.innerHTML = this.nama;
+    bangun.append(text); 
+    const lingkaran = document.getElementById('lingkaran');
+    lingkaran.style.width = this.ruas + 'px';
+    lingkaran.style.height = this.ruas + 'px';
+    lingkaran.style.borderRadius = "50%";
+    lingkaran.style.background = this.warna;
+    
+    return newElement;
+  }
+}
